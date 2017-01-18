@@ -5,6 +5,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+import org.springframework.context.ApplicationEvent;
+import org.springframework.core.env.Environment;
+import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -31,5 +34,20 @@ public class SpringUtil implements ApplicationContextAware{
 	} 
 	public static <T> T getBean(String beanName, Class<T> clazz) {
 		return getApplicationContext().getBean(beanName, clazz);
+	}
+	public static boolean containsBean(String name){
+		return getApplicationContext().containsBean(name);
+	}
+	public static Resource getResource(String path) {
+		return getApplicationContext().getResource(path);
+	}
+	public static void publishEvent(ApplicationEvent applicationEvent) {
+		getApplicationContext().publishEvent(applicationEvent);
+	}
+	public static void publishEvent(Object o) {
+		getApplicationContext().publishEvent(o);
+	}
+	public static Environment getEnvironment() {
+		return getApplicationContext().getEnvironment();
 	}
 }

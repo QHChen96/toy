@@ -16,7 +16,6 @@ public class GlobalDefaultExceptionHandler {
 	
 	@ExceptionHandler(value=BizException.class)
 	@ResponseBody
-	@ResponseStatus(reason = "biz exception")
 	public void defaultExceptionHandler(HttpServletRequest request, Exception e){
 		LOG.info(e.getMessage());
 	}

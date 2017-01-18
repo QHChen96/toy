@@ -6,12 +6,12 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 
-@Configuration
-@EnableScheduling
+
 public class SchedulingConfig {
 	private final Logger LOG = LoggerFactory.getLogger(this.getClass());
-	@Scheduled(cron="* 0/10 * * * ?")
+	@Scheduled(cron="* 10 * * * ?")
 	public void scheduler(){
 		LOG.info("Scheduling..");
 	}
+
 }

@@ -23,7 +23,7 @@ import com.umoo.toy.dto.BaseResult;
 public class BindingResultAop {
 	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
 	
-	@Pointcut("execution(* com.umoo.bonbon.web.*.*(..))")
+	@Pointcut("execution(* com.umoo.toy.web.*.*(..))")
 	public void aopMethod () {}
 	
 	@Around("aopMethod()")
