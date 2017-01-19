@@ -29,8 +29,7 @@ public class RedisCache {
 			@Override
 			public Boolean doInRedis(RedisConnection connection)
 					throws DataAccessException {
-				connection.setNX(bkey, bvalue);
-				return null;
+				return connection.setNX(bkey, bvalue);
 			}
 		});
 		return result;
