@@ -17,7 +17,7 @@ import java.util.Date;
 public class ScheduledTaskService {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
     private static final SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss");
-    @Scheduled(fixedRate = 5000)
+    //@Scheduled(fixedRate = 5000)
     public void reportCurrentTime() {
         logger.info("currentTime:" + format.format(new Date()));
     }

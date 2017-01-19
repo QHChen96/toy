@@ -3,8 +3,12 @@ package com.umoo.toy.web;
 import java.util.List;
 
 import com.umoo.toy.dto.BaseResult;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,6 +28,11 @@ public class DemoController {
 	public BaseResult<Demo> saveDemo(@Valid Demo demo, BindingResult result){
 		return new BaseResult<Demo>(true, demoService.saveDemo(demo));
 	}
+	@GetMapping("/demo/{id}")
+	public Demo getDemo(@PathVariable("id") Integer id) {
+		return demoService.findDemo(id);
+	}
+	
 	@PutMapping("/demo")
 	public String putDemos(){
 		Demo demo = new Demo();
@@ -39,7 +48,11 @@ public class DemoController {
 	public List<Demo> findDemos(){
 		return demoService.findDemos();
 	}
-
+	@DeleteMapping("/demo/{id}")
+	public String delDemo(@PathVariable("id") Integer id){
+		demoService.deleteFromCache(id);
+		return "{success:true}";
+	}
 	@RequestMapping(produces = "text/plain;charset=utf-8")
 	public String index(HttpServletRequest request) {
 		return "url" + request.getRequestURL() + " can access";

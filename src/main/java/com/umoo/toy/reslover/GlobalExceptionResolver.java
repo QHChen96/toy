@@ -23,7 +23,6 @@ import com.umoo.toy.dto.BaseResult;
  */
 public class GlobalExceptionResolver implements HandlerExceptionResolver{
 	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
-	@Override
 	@ResponseBody
 	public ModelAndView resolveException(HttpServletRequest request,
 			HttpServletResponse response, Object handler, Exception ex) {

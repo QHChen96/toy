@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class SpringUtil implements ApplicationContextAware{
-	private final Logger LOG = LoggerFactory.getLogger(this.getClass());
+	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	private static ApplicationContext applicationContext;
 	
@@ -21,7 +21,7 @@ public class SpringUtil implements ApplicationContextAware{
 		if(SpringUtil.applicationContext != null) {
 			SpringUtil.applicationContext = applicationContext;
 		}
-		LOG.info("applicationContext is loaded!");
+		logger.info("applicationContext is loaded!");
 	}
 	public static ApplicationContext getApplicationContext(){
 		return applicationContext;

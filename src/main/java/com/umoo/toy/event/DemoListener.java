@@ -10,7 +10,6 @@ import org.springframework.context.ApplicationListener;
  */
 public class DemoListener implements ApplicationListener<DemoEvent>{
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
-    @Override
     public void onApplicationEvent(DemoEvent demoEvent) {
         String msg = demoEvent.getMsg();
         logger.info(msg);

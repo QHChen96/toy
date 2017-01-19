@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <title>Hello World!</title>
+    </head>
+    <body>
+        <h1 th:inline="text">Hello.v.2</h1>
+        <p th:text="${hello}"></p>
+        <form action="/upload" enctype="multipart/form-data" method="POST">
+        	<input type="file" name="file"/>
+        	<input type="submit"/>
+        </form>
+        <a th:href="@{/autoconfig}">自动动配置的使用情况</a>
+        <a th:href="@{/configprops}">显示一个所有@ConfigurationProperties的整理列表</a>
+        <a th:href="@{/beans}">所有Spring Beans的完整列表</a>
+        <a th:href="@{/dump}">线程栈</a>
+        <a th:href="@{/env}">所有环境变量</a>
+        <a th:href="@{/health}">查看应用健康指标</a>
+        <a th:href="@{/info}">应用信息</a>
+        <a th:href="@{/mappings}">所有url映射</a>
+        <a th:href="@{/metrics}">应用基本指标</a>
+        <a th:href="@{/shutdown}">关闭</a>
+        <a th:href="@{/trace}">基本追踪信息</a>
+    </body>
+</html>

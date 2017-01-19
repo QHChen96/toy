@@ -11,7 +11,7 @@ import org.springframework.core.type.AnnotatedTypeMetadata;
  */
 public class DemoCondition implements Condition{
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
-    @Override
+    
     //根据上下文和元注解信息进行配置
     //对于需要这套规则的方法进行@Conditional注解
     public boolean matches(ConditionContext conditionContext, AnnotatedTypeMetadata annotatedTypeMetadata) {

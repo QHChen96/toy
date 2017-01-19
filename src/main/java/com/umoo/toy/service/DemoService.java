@@ -9,4 +9,6 @@ import com.umoo.toy.entity.Demo;
 public interface DemoService {
 	Demo saveDemo(Demo demo);
 	List<Demo> findDemos();
+	Demo findDemo(Integer id);
+	void deleteFromCache(Integer id);
 }
